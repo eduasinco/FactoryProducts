@@ -14,10 +14,18 @@ class AllergenSerializer(serializers.ModelSerializer):
         fields = ('name',)
 
 
-class ProductSerializer(serializers.ModelSerializer):
+class ProductSerializerFood(serializers.ModelSerializer):
     materials = MaterialSerializer(many=True, read_only=True)
     allergens = AllergenSerializer(many=True, read_only=True)
 
     class Meta:
         model = Product
         fields = ('id', 'factory', 'name', 'family', 'tags', 'allergens', 'materials')
+
+
+class ProductSerializerTextile(serializers.ModelSerializer):
+    materials = MaterialSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Product
+        fields = ('id', 'factory', 'name', 'colour', 'range', 'tags', 'customer', 'materials')
