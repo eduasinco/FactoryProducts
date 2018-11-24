@@ -19,7 +19,8 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^snippet/', include('snippet.urls')),
+    url(r'', include('snippet.urls')),
+    url(r'^products/', include('products.urls')),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
