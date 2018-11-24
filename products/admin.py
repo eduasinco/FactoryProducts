@@ -1,8 +1,8 @@
 from django.contrib import admin
-from models import Product, Factory, Tag, Materials
+from models import Product, Factory, Material, Allergen
 
 admin.site.register(Product)
 admin.site.register(Factory)
-admin.site.register(Tag)
-admin.site.register(Materials)
+admin.site.register(Material)
+admin.site.register(Allergen)
 
