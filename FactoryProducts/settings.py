@@ -78,16 +78,23 @@ WSGI_APPLICATION = 'FactoryProducts.wsgi.application'
 #         'rest_framework.permissions.IsAuthenticated',
 #     )
 # }
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default': {},
+    'textile': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db_textile.sqlite3'),
+    },
+    'food': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db_food.sqlite3'),
     }
 }
+
+DATABASES['default'] = DATABASES['textile']
+#DATABASE_ROUTERS = ['FactoryProducts.router.ProductsRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

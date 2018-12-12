@@ -1,15 +1,7 @@
 from django.db import models
 
 
-class Factory(models.Model):
-    name = models.CharField(max_length=100, blank=True, default='')
-
-    def __str__(self):
-        return self.name
-
-
 class User(models.Model):
-    factory = models.ForeignKey(Factory, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, blank=True, default='')
     email = models.CharField(max_length=100, blank=True, default='')
 
@@ -25,7 +17,6 @@ class Allergen(models.Model):
 
 
 class Product(models.Model):
-    factory = models.ForeignKey(Factory, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, blank=True, default='')
     family = models.CharField(max_length=100, blank=True, default='')
     tags = models.TextField(blank=True)
